@@ -57,3 +57,16 @@ For Single address fetch, use the command:
 ```bash
 python main.py --address 0xa39b189482f984388a34460636fea9eb181ad1a6
 ```
+
+### Assumptions
+- This app is a script that allows a user to download the transaction history for a given wallet.
+- There is no storage, we will directly use third party services of etherscan
+- There is no caching/storage layer in the script
+- We rely on the availability of etherscan for our services, no resiliency issues addressed
+
+### Architectural decisions
+- This app logic resides within a script, but the structure of the project is modular
+- We have configs separated out into a file of its own
+- We make use of a csv writer library to export the output of the file
+- We have a processor package that configures the data that we fetch for a given wallet
+- Fetcher package is a client for the apis provided by etherscan
