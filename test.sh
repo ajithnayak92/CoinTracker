@@ -13,6 +13,6 @@ ADDRESSES=(
 for ADDRESS in "${ADDRESSES[@]}"
 do
     OUTPUT_FILE="$OUTPUT_DIR/${ADDRESS}.csv"
-    echo "🚀 Processing $ADDRESS"
+    echo "Processing $ADDRESS"
     python3 main.py "$ADDRESS" --output "$OUTPUT_FILE" # --api-key "$API_KEY"
 done

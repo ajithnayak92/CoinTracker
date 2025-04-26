@@ -5,6 +5,8 @@ _NOTE: This is an assignment for CoinTracker, details [here](https://www.notion.
 
 Retrieve, categorize, and export all Ethereum wallet transactions to a CSV file — including normal transfers, internal transfers, ERC-20 tokens, and NFTs — ready for portfolio tracking or personal records.
 
+We're using the apis of `EtherScan` organisation, using the fetch transaction [api](https://docs.etherscan.io/api-endpoints/accounts#get-a-list-of-normal-transactions-by-address)
+
 The script requires `python3` to execute.
 
 ---
@@ -15,12 +17,12 @@ This script:
 
 - Accepts Ethereum wallet addresses as input
 - Fetches complete transaction history using the Etherscan API
-- Handles large wallets through smart pagination and multi-threaded fetching
+- Handles large wallets through smart pagination fetching
 - Categorizes transactions:
-  - External (Normal) Transfers
-  - Internal Transfers
-  - ERC-20 Token Transfers
-  - ERC-721 (NFT) Transfers
+  - `External (Normal) Transfers`
+  - `Internal Transfers`
+  - `ERC-20 Token Transfers`
+  - `ERC-721 (NFT) Transfers`
 - Exports structured data into CSV files
 
 ---
@@ -30,8 +32,8 @@ This script:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/eth-wallet-exporter.git
-cd eth-wallet-exporter
+git clone https://github.com/ajithnayak92/CoinTracker.git
+cd CoinTracker
 ```
 
 ### 2. Install dependencies
@@ -42,7 +44,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Configuration
-Update config/configs.py:
+Update configs.py with the api key for your account:
 
 ```python
 ...
@@ -51,7 +53,7 @@ ETHERSCAN_API_KEY = "your_etherscan_api_key"
 ```
 
 ##  Usage
-Single address
+For Single address fetch, use the command:
 ```bash
 python main.py --address 0xa39b189482f984388a34460636fea9eb181ad1a6
 ```
